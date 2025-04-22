@@ -5,6 +5,7 @@ import LoginPage from './login.jsx';
 import VerificationPage from './verifi.jsx';
 import ProfilePage from './profile.jsx';
 import ReportComplaintPage from './complaint.jsx';
+import ComplaintTrackingPage from './track.jsx';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <VerificationPage />
     <HomePage />
     <ReportComplaintPage />
+    <ComplaintTrackingPage />
     <ProfilePage />
   </React.StrictMode>
 );

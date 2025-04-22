@@ -3,3 +3,7 @@
 .feed-container::-webkit-scrollbar {
     display: none;
   }
+
+  .complaint-container::-webkit-scrollbar {
+    display: none;
+  }
