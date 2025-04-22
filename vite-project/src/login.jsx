@@ -10,9 +10,9 @@ export default function LoginPage() {
 
             <header className="text-center bg-black">
                 <img
-                    src="https://png.pngtree.com/png-vector/20191026/ourmid/pngtree-laptop-icon-png-image_1871608.jpg"
+                    src="https://media.istockphoto.com/id/1158795969/photo/laptop-tablet-and-phone-set-mockup-isolated-on-white-3d-render.jpg?s=612x612&w=0&k=20&c=1kSAka5gKjiwDuZMg29X6y5Vd4dlUoTQWkqSdrjhT9s="
                     alt="Laptop"
-                    className="mx-auto w-24 h-24"
+                    className="mx-auto w-45 h-34"
                 />
                 </header>
                 <div className="text-center mb-10">
@@ -41,7 +41,7 @@ export default function LoginPage() {
                         </div>
                     </div>
 
-                    <button className="w-full bg-red-500 text-white py-3 rounded-lg font-medium hover:bg-red-600 transition">
+                    <button className="w-full bg-red-500 cursor-pointer text-white py-3 rounded-lg font-medium hover:bg-red-600 transition">
                         Login
                     </button>
                 </form>

@@ -96,20 +96,20 @@ const Home = () => {
         ))}
       </main>
 
-      <nav className="bottom-nav absolute bottom-4 left-4 right-4 bg-black rounded-xl py-2.5 flex justify-around items-center shadow-lg">
-        <button className="nav-item active text-gray-300 hover:text-gray-400 flex flex-col items-center">
+      <nav className="bg-black rounded-xl py-2.5 flex justify-around items-center shadow-lg">
+        <button className="cursor-pointer nav-item active text-gray-300 hover:text-gray-400 flex flex-col items-center">
           <HomeIcon className="text-xl" />
           <span className="text-xs">Home</span>
         </button>
-        <button className="nav-item text-gray-300 hover:text-gray-400 flex flex-col items-center">
+        <button className="cursor-pointer nav-item text-gray-300 hover:text-gray-400 flex flex-col items-center">
           <AddPostIcon className="text-xl " />
           <span className="text-xs">Complaint</span>
         </button>
-        <button className="nav-item text-gray-300 hover:text-gray-400 flex flex-col items-center">
+        <button className="cursor-pointer nav-item text-gray-300 hover:text-gray-400 flex flex-col items-center">
           <ActivityIcon className="text-xl" />
           <span className="text-xs">Track</span>
         </button>
-        <button className="nav-item text-gray-300 hover:text-gray-400 flex flex-col items-center">
+        <button className="cursor-pointer nav-item text-gray-300 hover:text-gray-400 flex flex-col items-center">
           <AccountIcon className="text-xl" />
           <span className="text-xs">Profile</span>
         </button>
