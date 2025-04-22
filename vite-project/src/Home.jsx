@@ -1,66 +1,142 @@
-import React from "react";
-import { motion } from "framer-motion";
-import './index.css';
+import React from 'react';
+import './Home.css'; // We'll create this file next
 
-const reports = [
-  {
-    id: 1,
-    title: "Pothole on Main Street",
-    description: "Large pothole near the signal, causing traffic issues.",
-    status: "Pending",
-  },
-  {
-    id: 2,
-    title: "Broken Street Light",
-    description: "Street light not working in Sector 4 Park.",
-    status: "Resolved",
-  },
-  {
-    id: 3,
-    title: "Overflowing Garbage Bin",
-    description: "Garbage bin not cleaned for 3 days near Metro station.",
-    status: "In Progress",
-  },
-];
+// SVG Icons (Minimalist Style)
+const SparkleIcon = () => (
+  <svg width="28" height="35" viewBox="0 0 28 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 17.5C7.73199 17.5 14 25.335 14 35C14 25.335 20.268 17.5 28 17.5C20.268 17.5 14 9.66498 14 0C14 9.66498 7.73199 17.5 0 17.5Z" fill="#E55733"/>
+</svg>
 
-const statusColor = {
-  Pending: "bg-yellow-100 text-yellow-800",
-  Resolved: "bg-green-100 text-green-800",
-  "In Progress": "bg-blue-100 text-blue-800",
-};
+);
 
-const HomePage = () => {
-  return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <motion.div
-        className="text-center mb-6"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <h1 className="text-4xl font-bold text-gray-800 mb-2">Welcome to Samadhan</h1>
-        <p className="text-gray-600">Your local issue reporting platform</p>
-      </motion.div>
+const CameraIcon = () => (
+    <svg className="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+        <circle cx="12" cy="13" r="4"></circle>
+    </svg>
+);
 
-      <div className="h-[70vh] overflow-y-auto rounded-md border p-4 bg-white shadow-sm">
-        <div className="grid gap-4">
-          {reports.map((report) => (
-            <div key={report.id} className="border border-gray-200 rounded-lg p-4 shadow-sm bg-white">
-              <h2 className="text-xl font-semibold text-gray-800">
-                {report.title}
-              </h2>
-              <p className="text-gray-600 my-2">{report.description}</p>
-              <span
-                className={`inline-block text-sm px-2 py-1 rounded-full font-medium ${statusColor[report.status]}`}
-              >
-                {report.status}
-              </span>
+const HomeIcon = () => (
+    <svg className="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+    </svg>
+);
+
+const AddPostIcon = () => (
+    <svg className="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+        <line x1="12" y1="8" x2="12" y2="16"></line>
+        <line x1="8" y1="12" x2="16" y2="12"></line>
+    </svg>
+);
+
+const ActivityIcon = () => (
+    <svg className="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+    </svg>
+);
+
+const AccountIcon = () => (
+    <svg className="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+    </svg>
+);
+
+const ImageIcon = () => (
+    <svg className="icon image-placeholder-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+        <polyline points="21 15 16 10 5 21"></polyline>
+    </svg>
+);
+
+const FeedItem = ({ userName, location, timeAgo, text, imageUrl }) => (
+    <div className="feed-item">
+        <div className="feed-item-header">
+            <div className="profile-pic-placeholder">
+                <ImageIcon />
             </div>
-          ))}
+            <div className="user-info">
+                <span className="user-name">{userName}</span>
+                <span className="location">{location}</span>
+            </div>
+            <span className="time-ago">{timeAgo}</span>
         </div>
-      </div>
+        {imageUrl && (
+            <div className="feed-item-image-placeholder">
+                <ImageIcon />
+            </div>
+        )}
+        <p className="feed-item-text">{text}</p>
     </div>
-  );
+);
+
+const Home = () => {
+    // Corrected Dummy data
+    const feedData = [
+        {
+            id: 1,
+            userName: 'Kantik',
+            location: 'Sonagiri, Bhopal',
+            timeAgo: '2 Mins ago',
+            text: 'The cafeteria food is often cold, lacks variety, and the hygiene standards need urgent improvement for everyone\'s health and safety.',
+            imageUrl: 'placeholder'
+        },
+        {
+            id: 2,
+            userName: 'Pravenn',
+            location: 'Kalpana nagar, Bhopal',
+            timeAgo: '5 Mins ago',
+            text: 'Another post description here.',
+            imageUrl: 'placeholder'
+        }
+        // Add more feed items if needed
+    ];
+
+
+    return (
+        <div className="main-screen">
+            <div className="status-bar">
+                <span>19:27</span>
+                <div className="status-icons">
+                    <span>📶</span>
+                    <span>🔋</span>
+                </div>
+            </div>
+            <header className="app-header">
+                <SparkleIcon />
+                <h1 className="app-title">Explore Feeds</h1>
+                <CameraIcon />
+            </header>
+
+            <main className="feed-container">
+                {feedData.map(item => (
+                    <FeedItem key={item.id} {...item} />
+                ))}
+            </main>
+
+            <nav className="bottom-nav">
+                <button className="nav-item active">
+                    <HomeIcon />
+                    <span>Home</span>
+                </button>
+                <button className="nav-item">
+                    <AddPostIcon />
+                    <span>Complaint</span>
+                </button>
+                <button className="nav-item">
+                    <ActivityIcon />
+                    <span>Track</span>
+                </button>
+                <button className="nav-item">
+                    <AccountIcon />
+                    <span>Profile</span>
+                </button>
+            </nav>
+        </div>
+    );
 };
 
-export default HomePage;
+export default Home;
