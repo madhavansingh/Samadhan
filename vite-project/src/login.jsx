@@ -11,7 +11,6 @@ export default function LoginPage() {
             <header className="text-center bg-black">
                 <img
                     src="https://media.istockphoto.com/id/1158795969/photo/laptop-tablet-and-phone-set-mockup-isolated-on-white-3d-render.jpg?s=612x612&w=0&k=20&c=1kSAka5gKjiwDuZMg29X6y5Vd4dlUoTQWkqSdrjhT9s="
-                    alt="Laptop"
                     className="mx-auto w-45 h-34"
                 />
                 </header>
