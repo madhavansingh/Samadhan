@@ -85,11 +85,8 @@ const Home = () => {
   return (
     <div className="main-screen max-w-[400px] h-[800px] mx-auto my-8 bg-black text-white rounded-3xl overflow-hidden flex flex-col relative shadow-lg">
       
-
-      <header className="app-header flex flex-col p-4 relative min-h-[80px]">
-        <h1 className="app-title text-2xl font-bold p-11 text-center">Explore Feeds</h1>
-      </header>
-
+        <h1 className="app-title text-3xl font-bold p-11 text-center">Explore Feeds</h1>
+      
       <main className="feed-container flex-grow bg-white text-black rounded-t-3xl p-4 pb-20 overflow-y-auto">
         {feedData.map(item => (
           <FeedItem key={item.id} {...item} />
