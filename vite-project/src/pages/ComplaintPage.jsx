@@ -36,7 +36,7 @@ export default function ComplaintPage() {
 
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col p-5 relative rounded-t-3xl bg-white h-full overflow-y-auto"
+        className="feed-container flex flex-col p-5 relative rounded-t-3xl bg-white h-full overflow-y-auto"
       >
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700 mb-1">Upload Image</label>
