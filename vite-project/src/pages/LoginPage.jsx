@@ -43,7 +43,7 @@ export default function LoginPage() {
       ) : (
         // Login screen
         <>
-          <header className="text-center bg-black w-full">
+          <header className="text-center w-full">
             <div className="h-64 w-full flex items-center justify-center">
               <img
                 src="https://media.istockphoto.com/id/1158795969/photo/laptop-tablet-and-phone-set-mockup-isolated-on-white-3d-render.jpg?s=612x612&w=0&k=20&c=1kSAka5gKjiwDuZMg29X6y5Vd4dlUoTQWkqSdrjhT9s="
