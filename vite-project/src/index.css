@@ -1,9 +1,30 @@
+
 @import "tailwindcss";
 
-.feed-container::-webkit-scrollbar {
-    display: none;
-  }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-  .complaint-container::-webkit-scrollbar {
-    display: none;
-  }
+.feed-container::-webkit-scrollbar {
+  display: none;
+}
+
+.complaint-container::-webkit-scrollbar {
+  display: none;
+}
+
+.main-screen {
+  max-width: 400px;
+  height: 800px;
+  margin: 2rem auto;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.nav-item.active {
+  color: white;
+}
