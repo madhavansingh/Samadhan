@@ -1,14 +1,16 @@
+import { useState, useEffect } from "react"
 import BottomNavigation from "../components/BottomNavigation"
 
+// Placeholder icon for images
 const ImageIcon = () => (
   <svg
-    className="icon image-placeholder-icon"
-    width="40"
-    height="40"
+    className="text-gray-400"
+    width="28"
+    height="28"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="1"
+    strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
   >
@@ -18,74 +20,107 @@ const ImageIcon = () => (
   </svg>
 )
 
-const FeedItem = ({ userName, location, timeAgo, text, imageUrl }) => (
+// Reusable feed card
+const FeedItem = ({ userName, location, timeAgo, text, imageUrl, profileUrl }) => (
   <div className="feed-item mb-6 pb-4 border-b border-gray-200 animate-fadeIn">
-    <div className="feed-item-header flex items-center mb-2">
-      <div className="profile-pic-placeholder w-10 h-10 bg-gray-300 rounded-lg mr-2 flex justify-center items-center text-gray-500">
-        <ImageIcon />
+    {/* Header */}
+    <div className="flex items-center mb-2">
+      <div className="w-10 h-10 rounded-full overflow-hidden bg-gray-200 mr-3 flex justify-center items-center">
+        {profileUrl ? (
+          <img
+            src={profileUrl}
+            alt={userName}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <ImageIcon />
+        )}
       </div>
-      <div className="user-info flex flex-col">
-        <span className="user-name font-semibold text-base">{userName}</span>
-        <span className="location text-sm text-gray-500">{location}</span>
+      <div className="flex flex-col">
+        <span className="font-semibold text-base">{userName}</span>
+        <span className="text-sm text-gray-500">{location}</span>
       </div>
-      <span className="time-ago ml-auto text-xs text-gray-400">{timeAgo}</span>
+      <span className="ml-auto text-xs text-gray-400">{timeAgo}</span>
     </div>
+
+    {/* Feed Image */}
     {imageUrl && (
-      <div className="feed-item-image-placeholder w-full h-48 bg-gray-200 rounded-xl my-3 flex justify-center items-center">
-        <ImageIcon />
+      <div className="my-3 rounded-xl overflow-hidden">
+        <img
+          src={imageUrl}
+          alt="Feed content"
+          className="w-full h-48 object-cover"
+          onError={(e) => (e.target.style.display = "none")}
+        />
       </div>
     )}
-    <p className="feed-item-text text-sm leading-relaxed text-gray-800 mt-2">{text}</p>
+
+    {/* Feed Text */}
+    <p className="text-sm leading-relaxed text-gray-800">{text}</p>
   </div>
 )
 
 export default function HomePage() {
-  // Dummy data
-  const feedData = [
-    {
-      id: 1,
-      userName: "Kantik",
-      location: "Sonagiri, Bhopal",
-      timeAgo: "2 Mins ago",
-      text: "The cafeteria food is often cold, lacks variety, and the hygiene standards need urgent improvement for everyone's health and safety.",
-      imageUrl: "placeholder",
-    },
-    {
-      id: 2,
-      userName: "Pravenn",
-      location: "Kalpana nagar, Bhopal",
-      timeAgo: "5 Mins ago",
-      text: "Another post description here.",
-      imageUrl: "placeholder",
-    },
-    {
-      id: 3,
-      userName: "Rahul",
-      location: "MP Nagar, Bhopal",
-      timeAgo: "10 Mins ago",
-      text: "The street lights in our area have been out for three days now. This is creating safety concerns for residents walking at night.",
-      imageUrl: "placeholder",
-    },
-    {
-      id: 4,
-      userName: "Meera",
-      location: "Arera Colony, Bhopal",
-      timeAgo: "1 Hour ago",
-      text: "The park in our neighborhood needs maintenance. Several benches are broken and there's garbage accumulating in corners.",
-      imageUrl: "placeholder",
-    },
-  ]
+  const [feedData, setFeedData] = useState([])
+
+  // Dummy data (replace with API later)
+  useEffect(() => {
+    const dummyPosts = [
+      {
+        id: 1,
+        userName: "Kantik",
+        location: "Sonagiri, Bhopal",
+        timeAgo: "2 mins ago",
+        text: "The cafeteria food is often cold, lacks variety, and the hygiene standards need urgent improvement.",
+        imageUrl: "https://picsum.photos/400/200?random=1",
+        profileUrl: "https://i.pravatar.cc/100?img=1",
+      },
+      {
+        id: 2,
+        userName: "Pravenn",
+        location: "Kalpana Nagar, Bhopal",
+        timeAgo: "5 mins ago",
+        text: "Another post description here.",
+        imageUrl: "https://picsum.photos/400/200?random=2",
+        profileUrl: "https://i.pravatar.cc/100?img=2",
+      },
+      {
+        id: 3,
+        userName: "Rahul",
+        location: "MP Nagar, Bhopal",
+        timeAgo: "10 mins ago",
+        text: "The street lights in our area have been out for three days now. This is creating safety concerns for residents.",
+        imageUrl: "https://picsum.photos/400/200?random=3",
+        profileUrl: "https://i.pravatar.cc/100?img=3",
+      },
+      {
+        id: 4,
+        userName: "Meera",
+        location: "Arera Colony, Bhopal",
+        timeAgo: "1 hour ago",
+        text: "The park in our neighborhood needs maintenance. Several benches are broken and there's garbage accumulating in corners.",
+        imageUrl: "https://picsum.photos/400/200?random=4",
+        profileUrl: "https://i.pravatar.cc/100?img=4",
+      },
+    ]
+    setFeedData(dummyPosts)
+  }, [])
 
   return (
-    <div className="main-screen bg-black text-white flex flex-col relative">
-      <h1 className="app-title text-3xl font-bold p-11 text-center">Explore Feeds</h1>
+    <div className="main-screen bg-black text-white flex flex-col relative h-screen">
+      {/* Title */}
+      <h1 className="text-3xl font-bold py-8 text-center">Explore Feeds</h1>
 
+      {/* Feed Container */}
       <main className="feed-container flex-grow bg-white text-black rounded-t-3xl p-4 pb-20 overflow-y-auto">
-        {feedData.map((item) => (
-          <FeedItem key={item.id} {...item} />
-        ))}
+        {feedData.length === 0 ? (
+          <p className="text-center text-gray-500 mt-10">No posts yet</p>
+        ) : (
+          feedData.map((item) => <FeedItem key={item.id} {...item} />)
+        )}
       </main>
 
+      {/* Bottom Navigation */}
       <BottomNavigation />
     </div>
   )
