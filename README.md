@@ -1,55 +1,51 @@
-# 🏛️ Samadhan – Civic Issue Reporting Platform  
+# Samadhan – Civic Issue Reporting Platform  
 
-Samadhan is a **civic-tech web and mobile application** designed to empower citizens to report, track, and resolve local issues in their community.  
-It bridges the gap between citizens and authorities, making governance more **transparent, participatory, and efficient**.  
+Samadhan is a platform that helps citizens **report, track, and resolve local issues** in their community.  
+From potholes and sanitation problems to broken streetlights, Samadhan makes it simple for people to raise concerns and ensures they reach the right authorities.  
 
 ---
 
-## ✨ Features  
+## ✨ Why Samadhan?  
 
-### 👥 For Citizens  
-- Report issues with photos, location, and category (roads, sanitation, water, electricity, etc.)  
-- Track the real-time status of submitted issues  
-- Upvote and comment on existing reports to highlight importance  
-- Manage personal activity (submitted issues, contributions, profile)  
+Every city faces problems that affect everyday life. Often, these issues remain unresolved because there isn’t a clear way for citizens to escalate them.  
+Samadhan was created to bridge that gap by giving people a voice and creating a direct, transparent channel with local governance.  
 
-### 🏢 For Authorities  
-- View reported issues in a centralized dashboard  
-- Categorize, assign, and update issue status  
-- Access citizen feedback for prioritization  
-- Generate insights for better decision-making  
+---
 
-### 🌐 Platform Highlights  
-- Mobile-first responsive UI  
-- Intuitive and user-friendly design  
-- Map integration for geo-tagging issues  
-- Community-driven transparency through upvotes and comments  
+## 📌 Features  
+
+- 📷 Report issues with photo, location, and category  
+- 🗺️ Explore reports through a community feed or map view  
+- 👍 Upvote and comment to highlight what matters most  
+- 📂 Track your submissions in "My Activity"  
+- 🏢 Authority dashboard to manage and update reports  
 
 ---
 
 ## 🎯 Vision  
 
-Samadhan aims to build **smart, responsive, and accountable cities** by giving citizens a voice and enabling authorities to act efficiently.  
-Our mission is to create a digital bridge that fosters **collaboration between people and governance**.  
+Samadhan is not just a reporting tool — it is an effort to build **trust between citizens and authorities**.  
+By encouraging participation and accountability, it aims to make cities more responsive, transparent, and livable.  
 
 ---
 
-## 📅 Roadmap  
+## 🛤️ Roadmap  
 
-- **Phase 1 (MVP):** Issue reporting, tracking, upvoting, profile management  
-- **Phase 2:** Authority dashboard, real-time notifications, analytics  
-- **Phase 3:** AI-based categorization, duplicate issue detection, chatbot assistant  
-- **Phase 4:** Open data portal, API integrations with smart city platforms  
+- **Phase 1 (MVP):** Issue reporting, feed, profile, upvotes, comments  
+- **Phase 2:** Authority dashboard, real-time updates, notifications  
+- **Phase 3:** AI-powered categorization, duplicate detection  
+- **Phase 4:** Open data insights and smart city integrations  
 
 ---
 
 ## 📜 License  
 
-This project is licensed under the **MIT License**.  
+This project is released under the **MIT License**.  
 
 ---
 
 ## 🙌 Acknowledgements  
 
-- Inspired by **Swachh Bharat Abhiyan** and civic-tech initiatives worldwide  
-- Built with love for **citizens, governance, and community well-being** ❤️  
+- Inspired by **Swachh Bharat Abhiyan** and global civic-tech platforms  
+- Built to strengthen collaboration between **citizens and governance**  
+- Thanks to the open-source community and everyone working toward better cities  
